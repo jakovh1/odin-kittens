@@ -1,0 +1,19 @@
+<%= form_with model: kitten do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, value: kitten.name, placeholder: "Enter kitten's name here", required: true %>
+  </div>
+  <div>
+    <%= f.label :age %>
+    <%= f.number_field :age, in: 0.0..20.0, step: 0.1,  value: kitten.age, placeholder: "Enter kitten's age here", required: true %>
+  </div>
+  <div>
+    <%= f.label :cuteness %>
+    <%= f.text_field :cuteness, value: kitten.cuteness, placeholder: "Enter kitten's cuteness here", required: true %>
+  </div>
+  <div>
+    <%= f.label :softness %>
+    <%= f.text_field :softness, value: kitten.softness, placeholder: "Enter kitten's softness here", required: true %>
+  </div>
+  <%= f.submit kitten.persisted? ? 'Update kitten\'s data' : 'Create a kitten' %>
+<% end %>

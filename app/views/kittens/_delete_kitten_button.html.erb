@@ -1,0 +1,4 @@
+<%= link_to "Delete this #{kitten.name}", kitten_path(kitten), data: {
+                                              turbo_method: :delete,
+                                              turbo_confirm: "Are you sure?"
+                                              } %>

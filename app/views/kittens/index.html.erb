@@ -1,0 +1,8 @@
+<h1>Kittens</h1>
+<% @kittens.each do |kitten| %>
+  <div style="display: flex; column-gap: 20px">
+    <h3><%= link_to kitten.name, kitten, class: "btn" %></h3>
+    <%= render "delete_kitten_button", kitten: kitten %>
+  </div>
+<% end %>
+<%= link_to "Create a new kitten", new_kitten_path, class: "btn" %>

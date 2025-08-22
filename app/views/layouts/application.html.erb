@@ -23,6 +23,13 @@
   </head>
 
   <body>
+    <% flash.each do |type, message| %>
+      <div class="<%= type %>">
+        <%= message %>
+        <button class="close-btn" onclick="this.parentElement.remove()">×</button>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

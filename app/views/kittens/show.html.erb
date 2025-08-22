@@ -1,0 +1,22 @@
+<h1><%= @kitten.name %>'s Page</h1>
+
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @kitten.name, disabled: true %>
+  </div>
+  <div>
+    <%= label_tag :age %>
+    <%= number_field_tag :age,  @kitten.age,  disabled: true %>
+  </div>
+  <div>
+    <%= label_tag :cuteness %>
+    <%= text_field_tag :cuteness, @kitten.cuteness, disabled: true %>
+  </div>
+  <div>
+    <%= label_tag :softness %>
+    <%= text_field_tag :softness, @kitten.softness, disabled: true %>
+  </div>
+
+<br />
+<%= link_to "Edit #{@kitten.name}'s data", edit_kitten_path %>
+<%= render "delete_kitten_button", kitten: @kitten %>
